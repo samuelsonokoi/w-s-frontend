@@ -1,0 +1,81 @@
+.margin-top-sm {
+  margin-top: 1em;
+}
+
+.margin-top-md {
+  margin-top: 3em;
+}
+
+.wrapper {
+  background-color: #000000;
+  color: #fff;
+  padding: 2em 3em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a, a:visited, a:active, a:link {
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.row-divider {
+  padding: 5em 0px 4em 0px;
+}
+
+ h3 {
+  color: #fff;
+}
+
+h4, h5 {
+  color: #d4d4d4;
+}
+
+section.portfolio {
+  padding: 3em 0px 3em 0px;
+}
+
+div.hover {
+  transition-property: all;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+div.hover:hover {
+  transform: scale(0.9);
+}
+
+div.partners {
+  padding: 2em 3em;
+}
+
+h2 a {
+  border-bottom: 1px solid #ddd;
+}
+
+.icons a{
+  margin-right: .5em;
+  border: 1px solid #ddd;
+  padding: 4px 5px;
+  border-radius: 50%;
+}
+
+.fab {
+  transition-property: all;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.fab.fa-facebook-f {
+  padding: 5px 4px;
+}
+
+.fab:hover {
+  transform: rotate(180deg)
+}
+
+footer {
+  margin-top: 2em;
+}
