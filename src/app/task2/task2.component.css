@@ -1,0 +1,55 @@
+section.form-wrapper {
+  background-image: url(../../assets/images/background.png);
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.payment-form {
+  max-width: 30%;
+  padding: 2em 1.7em;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 10px 10px #c7c7c7;
+}
+
+.payment-form .visa img {
+  max-height: 2em;
+  margin-right: 2em;
+}
+
+.payment-form p {
+  line-height: 15px;
+} 
+
+.payment-form p span {
+  font-size: 1em;
+  color: #3842B8
+}
+
+.no-p-top-bottom {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+input.form-control, select.form-control {
+  background-color: #c7c7c7;
+  border-radius: 0px;
+}
+
+input.sub {
+  margin-top: 1em;
+  background-color: #3942B8;
+  border-radius: 0px;
+}
+
+label {
+  text-transform: uppercase;
+}
