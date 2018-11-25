@@ -15,7 +15,7 @@ section.form-wrapper {
   font-family: 'Montserrat', sans-serif;
   background-color: #ffffff;
   border-radius: 5px;
-  box-shadow: 10px 10px #c7c7c7;
+  box-shadow: 10px 10px #E6E7EE;
 }
 
 .payment-form .visa img {
@@ -40,7 +40,7 @@ section.form-wrapper {
 }
 
 input.form-control, select.form-control {
-  background-color: #c7c7c7;
+  background-color: #E6E7EE;
   border-radius: 0px;
 }
 
