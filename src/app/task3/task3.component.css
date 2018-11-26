@@ -1,0 +1,16 @@
+section.wrapper {
+  padding-top: 2em;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #e6e7ee;
+  min-height: 100vh;
+}
+
+span.icon-con {
+  padding: .4em .4em;
+  background-color: rgba(56, 67, 184, 0.295);
+  border-radius: 50%;
+}
+
+span.icon-con i {
+  color: #3842B8;
+}

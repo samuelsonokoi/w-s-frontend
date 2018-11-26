@@ -1,6 +1,7 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CreditCardDirectivesModule } from 'angular-cc-library';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { Task3Component } from './task3/task3.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    CreditCardDirectivesModule,
     AppRoutingModule
   ],
   providers: [

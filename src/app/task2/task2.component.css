@@ -1,3 +1,7 @@
+.m-b {
+  margin-bottom: 1em;
+}
+
 section.form-wrapper {
   background-image: url(../../assets/images/background.png);
   background-position: center;
@@ -7,15 +11,15 @@ section.form-wrapper {
   justify-content: center;
   flex-direction: column;
   display: flex;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .payment-form {
   max-width: 30%;
   padding: 2em 1.7em;
-  font-family: 'Montserrat', sans-serif;
   background-color: #ffffff;
   border-radius: 5px;
-  box-shadow: 10px 10px #E6E7EE;
+  box-shadow: 10px 10px #e6e7ee;
 }
 
 .payment-form .visa img {
@@ -40,7 +44,7 @@ section.form-wrapper {
 }
 
 input.form-control, select.form-control {
-  background-color: #E6E7EE;
+  background-color: #e6e7ee;
   border-radius: 0px;
 }
 
@@ -48,6 +52,22 @@ input.sub {
   margin-top: 1em;
   background-color: #3942B8;
   border-radius: 0px;
+}
+
+input, select {
+  border-radius: 0px;
+}
+
+.alert {
+  position: relative;
+  padding: .3em;
+  margin-bottom: 0px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+}
+
+.alert .alert-danger {
+  padding: .5em;
 }
 
 label {

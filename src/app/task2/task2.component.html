@@ -1,53 +1,103 @@
 <section class="form-wrapper">
   <div class="payment-form">
-    <div class="form-row">
-      <div class="col-4 visa">
-        <img src="../../assets/images/visa.png" alt="visa image" class="image-fluid float-left">
+    <form [formGroup]="cardForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="row m-b">
+        <div class="col-4 visa">
+          <img src="../../assets/images/visa.png" alt="visa image" class="image-fluid float-left">
+        </div>
+        <div class="col">
+          <p><span>39 EUR</span> <br>
+            <small>design magazine</small>
+          </p>
+        </div>
       </div>
-      <div class="col">
-        <p><span>39 EUR</span> <br>
-          <small>design magazine</small>
-        </p>
+      <div class="form-row">
+        <div class="form-group col-7">
+          <label for="card-num">card number</label>
+          <input type="tel" class="form-control" placeholder="Your card number" formControlName="cardNumber" autocomplete="cc-number" id="cc-number" ccNumber>
+          <div *ngIf="cardForm.get('cardNumber').invalid && cardForm.get('cardNumber').touched" class="alert alert-danger text-center" role="alert" >
+            <div *ngIf="cardForm.get('cardNumber').errors.required">
+              <small>enter a value</small><br>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <label for="card-cvc">cvc</label>
+          <input type="tel" class="form-control" id="card-cvc" placeholder="123" formControlName="cardCVC" ccCVC>
+          <div *ngIf="cardForm.get('cardCVC').invalid && cardForm.get('cardCVC').touched" class="alert alert-danger text-center" role="alert">
+            <div *ngIf="cardForm.get('cardCVC').errors.required">
+              <small>enter a value</small><br>
+            </div>
+            <div *ngIf="cardForm.get('cardCVC').errors.maxlength || cardForm.get('cardCVC').errors.minlength">
+              <small>must be 3 characters long.</small><br>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-12">
+          <label for="card-hn">Card Name</label>
+          <input type="text" id="card-hn" placeholder="Name on card" class="form-control" formControlName="cardName" />
+          <div *ngIf="cardForm.get('cardName').invalid && cardForm.get('cardName').touched" class="alert alert-danger text-center"
+            role="alert">
+            <div *ngIf="cardForm.get('cardName').errors.required">
+              <small>enter a value</small><br>
+            </div>
+            <div *ngIf="cardForm.get('cardName').errors.pattern">
+              <small>only alphabets allowed</small><br>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-12 no-p-top-bottom">
+          <label for="cardExpDay">Expiration Date</label>
+          <div *ngIf="cardForm.get('cardExpDay').invalid && cardForm.get('cardExpDay').touched" class="alert alert-danger text-center"
+            role="alert">
+            <div *ngIf="cardForm.get('cardExpDay').errors.required">
+              <small>select a value</small><br>
+            </div>
+            <div *ngIf="cardForm.get('cardExpDay').errors.pattern">
+              <small>only numbers allowed</small><br>
+            </div>
+          </div>
+          <div *ngIf="cardForm.get('cardExpMonth').invalid && cardForm.get('cardExpMonth').touched" class="alert alert-danger text-center"
+            role="alert">
+            <div *ngIf="cardForm.get('cardExpMonth').errors.required">
+              <small>select a value</small><br>
+            </div>
+            <div *ngIf="cardForm.get('cardExpMonth').errors.pattern">
+              <small>card expiration month must contain only alphabets</small><br>
+            </div>
+          </div>
+          <div *ngIf="cardForm.get('cardExpYear').invalid && cardForm.get('cardExpYear').touched" class="alert alert-danger text-center"
+            role="alert">
+            <div *ngIf="cardForm.get('cardExpYear').errors.required">
+              <small>select a value</small><br>
+            </div>
+            <div *ngIf="cardForm.get('cardExpYear').errors.pattern">
+              <small>only numbers allowed</small><br>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <select name="" id="cardExpDay" class="form-control" formControlName="cardExpDay">
+            <option value="">Day</option>
+            <option value="{{d}}" *ngFor="let d of days">{{d}}</option>
+          </select>
+        </div>
+        <div class="form-group col-5">
+          <select name="" id="cardExpMonth" class="form-control" formControlName="cardExpMonth">
+            <option value="">Month</option>
+            <option value="{{m}}" *ngFor="let m of months">{{m}}</option>
+          </select>
+        </div>
+        <div class="form-group col">
+          <select name="" id="cardExpYear" class="form-control" formControlName="cardExpYear">
+            <option value="">Year</option>
+            <option value="{{y}}" *ngFor="let y of years">{{y}}</option>
+          </select>
+        </div>
+        <div class="form-group col">
+          <input class="btn btn-primary btn-block sub" type="submit" value="Complete Payment" [disabled]="cardForm.invalid">
+        </div>
       </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-7">
-        <label for="card-num">card number</label>
-        <input type="text" class="form-control" id="card-num" placeholder="Your card number" autofocus>
-      </div>
-      <div class="form-group col">
-        <label for="card-cvv">cvc</label>
-        <input type="text" class="form-control" id="card-cvv" placeholder="123">
-      </div>
-      <div class="form-group col-12">
-        <label for="card-hn">Holder Name</label>
-        <input type="text" id="card-hn" placeholder="Holder's Name" class="form-control" />
-      </div>
-      <div class="form-group col-12 no-p-top-bottom">
-        <label for="cardExpDay">Expiration Date</label>
-      </div>
-      <div class="form-group col">
-        <select name="" id="cardExpDay" class="form-control">
-          <option value="">Day</option>
-          <option value="{{d}}" *ngFor="let d of days">{{d}}</option>
-        </select>
-      </div>
-      <div class="form-group col-5">
-        <select name="" id="cardExpMonth" class="form-control">
-          <option value="">Month</option>
-          <option value="{{m}}" *ngFor="let m of months">{{m}}</option>
-        </select>
-      </div>
-      <div class="form-group col">
-        <select name="" id="cardExpYear" class="form-control">
-          <option value="">Year</option>
-          <option value="{{y}}" *ngFor="let y of years">{{y}}</option>
-        </select>
-      </div>
-      <div class="form-group col">
-        <input class="btn btn-primary btn-block sub" type="submit" value="Complete Payment">
-      </div>
-    </div>
-
+    </form>
   </div>
 </section>
