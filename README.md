@@ -10,6 +10,8 @@ The simple portfolio page is a responsive mockup of a designer’s work showcase
 
 [Task 1 Reference](https://s3.amazonaws.com/w-s-tasks/portfolio-page-task/index.html)
 
+[Task 1 - Completed](https://ws-frontend-task.firebaseapp.com/task1)
+
 ## Task 2
 
 ### Visa Payment Form
@@ -18,6 +20,8 @@ The Visa payment form is a checkout form that represents a traditional payment c
 as well. 
 
 [Task 2 Reference](https://s3.amazonaws.com/w-s-tasks/payment-page-task/index.html)
+
+[Task 2 - Completed](https://ws-frontend-task.firebaseapp.com/task2)
 
 ## Task 3
 
